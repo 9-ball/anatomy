@@ -19,7 +19,7 @@ class SaavnSongUrl(scrapy.Spider):
         return modify_url
 
     def start_requests(self):
-        with open("saavn_albums.json") as f:
+        with open("saavn_albums.json") as f:                #read scraped album URLs
             data = f.read()
         url_json_list = json.loads(data)
         urls = [url_json['url'] for url_json in url_json_list]
