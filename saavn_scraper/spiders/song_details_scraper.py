@@ -31,9 +31,11 @@ class SaavnSongDetails(scrapy.Spider):
         data['song_name'] = song_name
         data['song_duration'] = song_time
         data['song_language'] = song_lang
+        data['song_url'] = response.url
         data['album_details'] = self.get_album_details(response)
         data['breadcrumbs'] = self.get_breadcrumbs(response)
-        
+        data['image'] = self.get_media(response)
+
         artist_info = self.get_artist_details(response)
         data['artist_details'] = artist_info
         return data
@@ -49,9 +51,11 @@ class SaavnSongDetails(scrapy.Spider):
         return modify_url
 
     def get_song_details(self, response):
-        song_name = response.xpath('//*[@class="u-h2 u-margin-bottom-tiny@sm"]//text()').extract()[0]
-        song_time = response.xpath('//*[@id="root"]/div[2]//div/main//figure/figcaption//span//text()').extract()[1]
-        song_lang = response.xpath('//*[@id="root"]/div[2]//div/main//figure/figcaption//span//text()').extract()[3]
+        song_name = response.xpath('//*[@class="u-h2 u-margin-bottom-tiny@sm"]//text()').extract()[0].replace("\u2019","'")
+        song_features = response.xpath('//*[@id="root"]/div[2]//div/main//figure/figcaption//span//text()').extract()
+        song_features = [feature for feature in song_features if '\xa0' not in feature]
+        song_time = song_features[0]
+        song_lang = song_features[1]
         return song_name, song_time, song_lang
 
     def get_album_details(self, response):
@@ -70,6 +74,10 @@ class SaavnSongDetails(scrapy.Spider):
 
     def get_breadcrumbs(self, response):
         breadcrumbs = response.xpath('//*[@id="root"]/div[2]/footer/div[1]//div/div/div/ol//text()').extract()
-        breadcrumbs = [crumb for crumb in breadcrumbs if crumb != ' ']  
+        breadcrumbs = [crumb.replace("\u2019","'") for crumb in breadcrumbs if crumb != ' ']  
         return breadcrumbs
+
+    def get_media(self, response):
+        image = response.xpath('//*[@class="o-flag__img u-shadow"]//img//@src').extract()[0] 
+        return image        
 
