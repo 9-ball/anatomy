@@ -38,5 +38,5 @@ scrapy crawl saavn_song_url -O saavn_songs.json
 scrapy crawl saavn_song_details -O saavn_songs_details.json
 ```
 
-#### Output
+#### Output format
 > {"song_name": "Rabba Maine Chand Vekhya", "song_duration": "3:45", "song_language": "Hindi", "song_url": "https://www.jiosaavn.com/song/rabba-maine-chand-vekhya/KgtfcxtWT3c", "album_details": {"album_name": "Rabba Maine Chand Vekhya", "album_url": "https://www.jiosaavn.com/album/rabba-maine-chand-vekhya/tFwfNwTZjAw_"}, "breadcrumbs": ["Home", "Albums", "Rabba Maine Chand Vekhya", "Rabba Maine Chand Vekhya"], "image": "https://c.saavncdn.com/845/Rabba-Maine-Chand-Vekhya-Hindi-2021-20210505182055-500x500.jpg", "artist_details": [{"artist_name": "Jubin Nautiyal", "artist_url": "https://www.jiosaavn.com/artist/jubin-nautiyal/uGdfg6zGf4s_"}, {"artist_name": "Vibha Saraf", "artist_url": "https://www.jiosaavn.com/artist/vibha-saraf/GevpGMbqiwA_"}, {"artist_name": "Tanishq Bagchi", "artist_url": "https://www.jiosaavn.com/artist/tanishq-bagchi/8ziQGB-Jgso_"}, {"artist_name": "Vayu", "artist_url": "https://www.jiosaavn.com/artist/vayu/sa2WOv2iZfw_"}]}
