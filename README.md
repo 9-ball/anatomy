@@ -7,7 +7,7 @@ Tutorial: https://docs.scrapy.org/en/latest/intro/tutorial.html
 scrapy startproject saavn_scraper
 ```
 
-# About Project (JioSaavn Scraper)
+# About project (JioSaavn Scraper)
 Details of newly released songs of different languages have been scraped from JioSaavn - Indian online music streaming service using Scrapy.
 #### Step 1: Scrape newly released album URLs of different languages.
 * Scraper: `album_url_scraper.py`
