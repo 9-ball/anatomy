@@ -14,7 +14,7 @@ Details of newly released songs of different languages have been scraped from Ji
 scrapy crawl saavn_album_url -O saavn_albums.json
 ```
 That will generate a `saavn_albums.json` file containing all scraped items, serialized in JSON.
-#### Step 2: Scrape song URLs from album page.
+#### Step 2: Scrape song URLs from album pages.
 * Scraper: `song_url_scraper.py`
 * Scraper path: `saavn_scraper/spiders/`
 * Spider name: `saavn_song_url`
@@ -23,7 +23,7 @@ That will generate a `saavn_albums.json` file containing all scraped items, seri
 ```
 scrapy crawl saavn_song_url -O saavn_songs.json
 ```
-#### Step 3: Scrape song details from song page.
+#### Step 3: Scrape song details from song pages.
 * Scraper: `song_details_scraper.py`
 * Scraper path: `saavn_scraper/spiders/`
 * Spider name: `saavn_song_details`
