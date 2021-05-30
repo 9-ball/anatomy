@@ -38,4 +38,6 @@ scrapy crawl saavn_song_url -O saavn_songs.json
 scrapy crawl saavn_song_details -O saavn_songs_details.json
 ```
 
+#### Output data
+`{"song_name": "Tum Na Jane Kis Jahan Men Kho Gaye", "song_duration": "3:34", "song_language": "Hindi", "album_details": {"album_name": "Sanam - Tum Na Jane Kis Jahan Men Kho Gaye", "album_url": "https://www.jiosaavn.com/album/sanam---tum-na-jane-kis-jahan-men-kho-gaye/D6lPAM3g,es_"}, "breadcrumbs": ["Home", "Albums", "Sanam - Tum Na Jane Kis Jahan Men Kho Gaye", "Tum Na Jane Kis Jahan Men Kho Gaye"], "artist_details": [{"artist_name": "Sanam (Band)", "artist_url": "https://www.jiosaavn.com/artist/sanam-band/hBK6l30Gz1w_"}, {"artist_name": "S. D. Burman", "artist_url": "https://www.jiosaavn.com/artist/s.-d.-burman/FRKH9Z9gUx4_"}, {"artist_name": "Sahir Ludhianvi", "artist_url": "https://www.jiosaavn.com/artist/sahir-ludhianvi/hel1xcytMi4_"}]}`
 
